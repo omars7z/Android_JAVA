@@ -50,12 +50,6 @@ public class MainActivity2 extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*Toast.makeText(MainActivity2.this, countries[position], Toast.LENGTH_SHORT).show();
-                Intent detailsIntent = new Intent(MainActivity2.this, Jordan.class);
-                detailsIntent.putExtra("countryName", countries[position]);
-                detailsIntent.putExtra("landmarkImage", countries[position]);
-                // Add more data as needed
-                startActivity(detailsIntent);*/
                 switch (position){
                     case 0:
                         Intent i = new Intent(MainActivity2.this, Jordan.class);
@@ -94,9 +88,9 @@ public class MainActivity2 extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = getLayoutInflater().inflate(R.layout.row, null);
-//            TextView text = view.findViewById(R.id.countries);
-            ImageView images = view.findViewById(R.id.images);
-//            text.setText(countries[position]);
+            TextView text = view.findViewById(R.id.tv1);
+            ImageView images = view.findViewById(R.id.im1);
+            text.setText(countries[position]);
             images.setImageResource(countriesImages[position]);
             return view;
         }
